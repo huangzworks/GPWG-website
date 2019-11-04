@@ -30,55 +30,37 @@
 关注本书发售信息的朋友请定期访问本站，
 又或者关注译者的\ `微博 <http://weibo.com/huangz1990>`_\ 或 \ `twitter <https://twitter.com/huangz1990>`_\  。
 
-目录
+目录&试读
 --------------
 
-| 译者序
-| 译者简介
-| 前言
-| 致谢
-| 关于本书
-| 关于作者
+.. toctree::
+   :maxdepth: 2
 
-**单元 0：入门**
+   preview/preface
+   preview/foreword
+   preview/ack
+   preview/about_this_book
+   preview/about_the_authors
 
-- 第 1 课：各就各位，预备，Go！
-  
-  - 1.1 什么是 Go ？
-  - 1.2 Go 游乐场
-  - 1.3 包和函数
-  - 1.4 唯一无二的大括号风格
-  - 1.5 课后小结
+   preview/unit0
+   preview/unit1
 
-**单元 1：命令式编程**
+:ref:`unit0`
 
-- 第 2 课：被美化的计算器
+.. toctree::
+   :maxdepth: 2
 
-  - 2.1 执行计算
-  - 2.2 格式化输出
-  - 2.3 常量和变量
-  - 2.4 走捷径
-  - 2.5 数字游戏
-  - 2.6 课后小结
+   preview/lession1
 
-- 第 3 课：循环和分支
+:ref:`unit1`
 
-  - 3.1 真或假
-  - 3.2 比较
-  - 3.2 使用 ``if`` 实现分支判断
-  - 3.4 逻辑运算符
-  - 3.5 使用 ``switch`` 实现分支判断
-  - 3.6 使用循环实现重复执行
-  - 3.7 课后小结
+.. toctree::
+   :maxdepth: 2
 
-- 第 4 课：变量作用域
-  
-  - 4.1 审视作用域
-  - 4.2 简短声明
-  - 4.3 作用域的范围
-  - 4.4 课后小结
-
-- 第 5 课：单元实验——前往火星的航行票
+   preview/lession2
+   preview/lession3
+   preview/lession4
+   preview/lession5
 
 **单元 2：类型**
 
