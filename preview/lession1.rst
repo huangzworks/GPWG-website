@@ -31,13 +31,13 @@ ngrok（\ `ngrok.com <https://ngrok.com/>`__\ ）
 ，并将该项目转变成了自己的全职事业。
 
 为了向图 1-1 所示的那只无忧无虑的 Go 吉祥物表示敬意，社区中的 Go
-拥护者通常会把自己称为 gopher （囊地鼠，囊鼠）。
+拥护者通常会把自己称为 gopher （地鼠）。
 虽然编程路上充满着各式各样的挑战，但通过使用 Go
 并阅读本书，我们希望你能够从中发现编程的乐趣。
 
 --------------
 
-图 1-1 Renée French 设计的 Go 囊地鼠吉祥物
+图 1-1 Renée French 设计的 Go 地鼠吉祥物
 
 .. image:: image/lession1/gopher.jpg
 
