@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>第 1 章：各就各位，预备，Go！ &#8212; GPWGCN.com 1.0 文档</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="第 2 章：被美化的计算器" href="lession2.html" />
+    <link rel="prev" title="关于作者" href="about_the_authors.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          GPWGCN.com</a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="preface.html">译者序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foreword.html">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ack.html">致谢</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_this_book.html">关于本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_the_authors.html">关于作者</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">第 1 章：各就各位，预备，Go！</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lession2.html">第 2 章：被美化的计算器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lession3.html">第 3 章：循环和分支</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lession4.html">第 4 章：变量作用域</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lession5.html">第 5 章：单元实验——前往火星的航行票</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">导航 <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">第 1 章：各就各位，预备，Go！</a><ul>
+<li><a class="reference internal" href="#id1">1.1 什么是 Go ？</a></li>
+<li><a class="reference internal" href="#id2">1.2 Go 游乐场</a></li>
+<li><a class="reference internal" href="#id3">1.3 包和函数</a></li>
+<li><a class="reference internal" href="#id4">1.4 唯一无二的大括号风格</a></li>
+<li><a class="reference internal" href="#id5">1.5 课后小结</a><ul>
+<li><a class="reference internal" href="#playground-go">实验：playground.go</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="about_the_authors.html" title="Previous Chapter: 关于作者"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 关于作者</span>
+    </a>
+  </li>
+  <li>
+    <a href="lession2.html" title="Next Chapter: 第 2 章：被美化的计算器"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">第 2 章：被美化的计算器 &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <div class="section" id="go">
+<h1>第 1 章：各就各位，预备，Go！<a class="headerlink" href="#go" title="永久链接至标题">¶</a></h1>
+<p>阅读本课程能够帮助你：</p>
+<ul class="simple">
+<li><p>了解 Go 与众不同的地方</p></li>
+<li><p>了解如何访问 Go 游乐场</p></li>
+<li><p>学会如何将文本打印到屏幕上</p></li>
+<li><p>对包含任意自然语言的文本进行实验</p></li>
+</ul>
+<p>Go 是一门为<em>云计算</em> 而生的现代化编程语言。 根据
+<a class="reference external" href="https://thenewstack.io/who-is-the-go-developer/">thenewstack.io/who-is-the-go-developer/</a>
+和 <a class="reference external" href="https://golang.org/wiki/GoUsers">golang.org/wiki/GoUsers</a>
+的记载，
+包括亚马逊（Amazon）、苹果（Apple）、科能软件（Canonical）、雪佛龙（Chevron）、迪士尼（Disney）、脸书（Facebook）、通用电气（GE）、谷歌（Google）、Heroku、微软（Microsoft）、Twitch、威瑞森无线（Verizon）
+和沃尔玛（Walmart）在内的公司都使用了 Go 来开发重要的项目，并且由于诸如
+CloudFlare、Cockroach Labs、DigitalOcean、Docker、InfluxData、Iron.io、
+Let’s Encrypt、Light Code Labs、Red Hat CoreOS、SendGrid
+这样的公司以及云原生计算基金会（Cloud Native Computing
+Foundation）等组织的推动，许多 web 底层基础设施正在陆续迁移至 Go 之上。</p>
+<p>尽管 Go 正在数据中心（data
+center）大放异彩，但它的应用场景并不仅限于工作区域。 比如 Ron Evans 和
+Adrian Zankich 就创建了用于控制机器人和硬件的 Gobot
+库（<a class="reference external" href="https://gobot.io/">gobot.io</a>），而 Alan Shreve
+则创建了以学习 Go 为目的的开发工具
+ngrok（<a class="reference external" href="https://ngrok.com/">ngrok.com</a>）
+，并将该项目转变成了自己的全职事业。</p>
+<p>为了向图 1-1 所示的那只无忧无虑的 Go 吉祥物表示敬意，社区中的 Go
+拥护者通常会把自己称为 gopher （地鼠）。
+虽然编程路上充满着各式各样的挑战，但通过使用 Go
+并阅读本书，我们希望你能够从中发现编程的乐趣。</p>
+<hr class="docutils" />
+<p>图 1-1 Renée French 设计的 Go 地鼠吉祥物</p>
+<img alt="../_images/gopher.jpg" src="../_images/gopher.jpg" />
+<hr class="docutils" />
+<p>本课程将展示一个运行在 web 浏览器里面的 Go
+程序，并基于该程序进行一些实验。</p>
+<blockquote>
+<div><p>{请考虑这一点}</p>
+<p>像英语这样的自然语言充斥着各式各样模棱两可的话。
+比如说，当你向数字助理说出“Call me a
+cab”的时候，它是应该帮你致电出租车公司呢，还是应该假设你想要把自己的名字改成“<em>a
+cab</em>”呢？</p>
+<p>清晰度对于编程语言永远都是最重要的。
+假如编程语言的语法或者句法允许歧义存在，那么计算机也许就无法完成人们指定的行为，这样一来编程工作将变得毫无意义。</p>
+<p>Go
+并不是一门完美的语言，但跟我们之前使用过的其他语言相比，它在清晰度方面所做的努力是无人能及的。
+在学习这一课的时候，你将会看到一些名词缩写以及行业术语。
+虽然一开始你可能会对这些内容感到陌生，但我们希望你可以多花些时间，字斟句酌，仔细体会
+Go 是如何减少语言中的歧义的。</p>
+</div></blockquote>
+<div class="section" id="id1">
+<h2>1.1 什么是 Go ？<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>Go 是一门<em>编译</em>语言。 在运行程序之前，Go
+首先需要使用<em>编译器</em>将用户编写的代码转化为计算机能够理解的 0 和 1 。
+为了便于执行和分发，编译器还会把所有代码整合并编译成一个单独的<em>可执行文件</em>。
+在编译的过程中，Go
+编译器能够捕捉到程序中包括拼写错误在内的一些人为失误。</p>
+<p>并非所有编程语言都需要编译才能运行，比如 Python 、 Ruby
+和其他一些流行语言就选择了在程序运行的时候，通过<em>解释器</em>一条接一条地转化代码中的声明，但这也意味着
+bug 可能会隐藏在测试尚未尝触及到的代码当中。</p>
+<p>不过换个角度来看，解释器不仅能够让开发过程变得迅速且具有交互性，还能够让语言本身变得灵活、轻松和令人愉快。
+相反地，编译语言却常常因为像机器人一样顽固不化、墨守成规而广为人知，并且缓慢的编译速度也常常为人所诟病，然而实际上并非所有编译语言都是如此。</p>
+<blockquote>
+<div><p>我们想要构造出这样一种语言， 它不仅可以像 C++ 和 Java
+这类静态编译语言一样安全、高效， 并且还可以像 Python
+这类动态类型解释语言一样身轻如燕并且充满乐趣。 —— Rob
+Pike，《极客周刊》（详情请见 <a class="reference external" href="mng.bz/jr8y">mng.bz/jr8y</a>）</p>
+</div></blockquote>
+<p>Go 在考虑软件开发的<em>体验</em>方面可谓煞费苦心。
+首先，即使是大型程序的编译也可以在极短的时间内完成，并且只需要用到一条命令。
+其次，语言排除了那些可能会导致歧义的特性，鼓励可预测和简明易懂的代码。
+最后，Go 为 Java 等传统语言死板的数据结构提供了轻量级的替代品。</p>
+<blockquote>
+<div><p>Java 避免了 C++ 当中许多不常见、难懂和令人迷惑的特性，
+根据我们的经验， 这些特性带来的麻烦要比好处多得多。 —— James
+Gosling，《Java：概述》</p>
+</div></blockquote>
+<p>每一种新编程语言都会对以往想法进行改良。 与早期语言相比，在 Go
+里面高效地使用内存将变得更为容易，出错的可能性也更低，并且 Go
+还能利用多核机器上的每个核心获得额外的性能优势。
+很多成功案例都会把性能提升列举为转向 Go 的其中一个原因。 比如根据
+<a class="reference external" href="http://mng.bz/Wevx">mng.bz/Wevx</a> 和
+<a class="reference external" href="http://mng.bz/8yo2">mng.bz/8yo2</a>
+的记载，<a class="reference external" href="http://Iron.io">Iron.io</a> 只用了 2 台 Go
+服务器就替换掉了他们原来使用的 30 台 Ruby 服务器； 而根据
+<a class="reference external" href="http://mng.bz/EnYl">mng.bz/EnYl</a>
+的记载，<a class="reference external" href="https://bitly.com/">Bitly</a> 在使用 Go 重写原有的 Python
+应用之后也获得了持续、可测量的性能提升，这导致他们在之后把自己的 C
+应用也“更新换代”成了相应的 Go 版本（详情请见
+<a class="reference external" href="https://mng.bz/EnYl">mng.bz/EnYl</a>）。</p>
+<p>Go
+不仅像解释语言一样简单和有趣，它还拥有编译语言快如闪电的性能优势以及坚如磐石的可靠性，并且由于
+Go 是一门只包含几种简单概念的小型语言，所以它学习起来也相对比较快。
+终上所述，我们就得出了以下 Go 箴言：</p>
+<p>并且由于 Go
+是一门只包含几种简单概念的小型语言，所以它学习起来也相对比较快。</p>
+<blockquote>
+<div><p>Go 是一门开源编程语言，
+它可以大规模地生产出<strong>简单</strong>、<strong>高效</strong>并且<strong>可信赖</strong>的软件。
+—— 《Go 品牌手册》（Go Brand Book）</p>
+</div></blockquote>
+<blockquote>
+<div><p>{提示}</p>
+<p>当你在互联网上搜索 Go 的相关话题时， 可以使用关键字 golang
+来代表 Go 语言。 这种将 -lang
+后缀添加到语言名字之后的做法也适用于其他编程语言， 比如 Ruby 、 Rust
+等。</p>
+</div></blockquote>
+<blockquote>
+<div><p>{速查 1-1}</p>
+<p>Go 编译器的两个优点是什么？</p>
+</div></blockquote>
+<blockquote>
+<div><p>{速查 1-1 答案}</p>
+<p>Go 编译器可以在极短的时间内完成对大型程序的编译，
+并且它还可以在程序运行之前找出代码中的一些人为失误， 比如拼写错误等。</p>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>1.2 Go 游乐场<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>上手学习 Go 语言最快捷的方式就是使用 Go 游乐场
+<a class="reference external" href="https://play.golang.org/">play.golang.org</a> ，
+这个工具可以让你在无需安装任何软件的情况下直接编辑、运行和试验 Go 程序。
+当你点击游乐场的运行按钮（Run）的时候， 游乐场就会在 Google
+的服务器上编译并运行你输入的代码， 然后在屏幕上打印出代码的执行结果。</p>
+<hr class="docutils" />
+<p>图 1-2 Go 游乐场</p>
+<img alt="../_images/playground.jpg" src="../_images/playground.jpg" />
+<hr class="docutils" />
+<p>点击游乐场的分享按钮（share）可以获得一个访问当前代码的链接。
+你可以通过这个链接把自己的代码分享给朋友，又或者将其用作浏览器书签以便保存工作进度。</p>
+<blockquote>
+<div><p>{注意}</p>
+<p>虽然本书列出的所有代码和练习都可以通过 Go 游乐场执行，
+但如果你更习惯使用自己的编辑器和命令行， 那么你可以访问
+<a class="reference external" href="https://golang.org/dl/">golang.org/dl/</a> ， 并按照页面中的指示将
+Go 下载并安装至你的电脑。</p>
+</div></blockquote>
+<blockquote>
+<div><p>{速查 1-2}</p>
+<p>Go 游乐场里面的运行按钮是用来干什么的？</p>
+</div></blockquote>
+<blockquote>
+<div><p>{速查 1-2 答案}</p>
+<p>运行按钮可以在 Google
+的服务器上编译并执行用户输入的代码。</p>
+</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h2>1.3 包和函数<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>当我们访问 Go 游乐场的时候将会看到以下代码，它作为学习 Go
+语言的起点真的再合适不过了。</p>
+<hr class="docutils" />
+<p>代码清单 1-1 与游乐场的初次见面： <code class="docutils literal notranslate"><span class="pre">playground.go</span></code></p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>                            <span class="c1">// 声明本代码所属的包</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+    <span class="s">&quot;fmt&quot;</span>                               <span class="c1">// 导入 fmt 包，使其可用（fmt是format的缩写）</span>
+<span class="p">)</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>                           <span class="c1">// 声明一个名为 main 的函数</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Hello, playground&quot;</span><span class="p">)</span>    <span class="c1">// 在屏幕上打印出“Hello, playground”</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>尽管这段代码非常简短，但它却引入了 <code class="docutils literal notranslate"><span class="pre">package</span></code> 、 <code class="docutils literal notranslate"><span class="pre">import</span></code> 和 <code class="docutils literal notranslate"><span class="pre">func</span></code>
+这三个非常重要的关键字，这些保留关键字都有它们各自的特殊目的。</p>
+<p><code class="docutils literal notranslate"><span class="pre">package</span></code> 关键字声明了代码所属的包，在本例中这个包的名字就是 <code class="docutils literal notranslate"><span class="pre">main</span></code>
+。 所有用 Go
+编写的代码都会被组织成<em>各式各样的包</em>，并且每个包都对应一个单独的构想。
+比如 Go
+语言本身就提供了一个面向数学、压缩、加密、图像处理等领域的标准库。</p>
+<p>在 <code class="docutils literal notranslate"><span class="pre">package</span></code> 关键字之后， 代码使用了 <code class="docutils literal notranslate"><span class="pre">import</span></code>
+关键字来导入自己将要用到的包。 一个包可以包含任意数量的<em>函数</em>。 比如
+<code class="docutils literal notranslate"><span class="pre">math</span></code> 包就提供了诸如 <code class="docutils literal notranslate"><span class="pre">Sin</span></code> 、 <code class="docutils literal notranslate"><span class="pre">Cos</span></code> 、 <code class="docutils literal notranslate"><span class="pre">Tan</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Sqrt</span></code>
+（平方根）等函数，而此处用到的 <code class="docutils literal notranslate"><span class="pre">fmt</span></code>
+包则提供了用于格式化输入和输出的函数。
+因为在屏幕上显示文本是一个非常常用的操作，所以 Go 使用了缩写 <code class="docutils literal notranslate"><span class="pre">fmt</span></code>
+作为包名。 Gopher
+们通常把这个包的名字读作“FŌŌMT!”，给人的感觉仿佛就像这个库是使用漫画书上的大爆炸字体撰写的一样。</p>
+<p><code class="docutils literal notranslate"><span class="pre">func</span></code> 关键字用于声明函数，在本例中这个函数的名字就是 <code class="docutils literal notranslate"><span class="pre">main</span></code> 。
+每个函数的<em>体</em>（body）都需要使用大括号 <code class="docutils literal notranslate"><span class="pre">{}</span></code> 实施包围，这样 Go
+才能知道每个函数从何处开始，又在何处结束。</p>
+<p><code class="docutils literal notranslate"><span class="pre">main</span></code> 这一<em>标识符</em>（identifier）具有特殊意义。 当我们运行一个 Go
+程序的时候，它总是从 <code class="docutils literal notranslate"><span class="pre">main</span></code> 包的 <code class="docutils literal notranslate"><span class="pre">main</span></code> 函数开始运行。 如果 <code class="docutils literal notranslate"><span class="pre">main</span></code>
+不存在，那么 Go
+编译器将报告一个错误，因为它无法得知程序应该从何处开始执行。</p>
+<img alt="../_images/go.jpg" src="../_images/go.jpg" />
+<p>为了打印出一个由文本组成的<em>行</em>，例子中的代码使用了 <code class="docutils literal notranslate"><span class="pre">Println</span></code>
+函数（其中 <code class="docutils literal notranslate"><span class="pre">ln</span></code> 为行的英文字母 line 的缩写）。
+每次用到被导入包中的某个函数时，我们都需要在函数的名字前面加上包的名字以及一个点号作为前缀。
+比如代码清单中的 <code class="docutils literal notranslate"><span class="pre">Println</span></code> 函数前面就带有 <code class="docutils literal notranslate"><span class="pre">fmt</span></code>
+以及一个点号作为前缀，这是因为 <code class="docutils literal notranslate"><span class="pre">Println</span></code> 函数就是由被导入的 <code class="docutils literal notranslate"><span class="pre">fmt</span></code>
+包提供的。 Go
+的这一特性可以让用户在阅读代码的时候立即弄清楚各个函数分别来源于哪个包。</p>
+<p>当我们按下 Go
+游乐场中的运行按钮时，代码中被引号包围的文本将输出至屏幕，最终使得文本“Hello,
+playground”出现在游乐场的输出区域中。
+对于英语来说，即使是缺少一个逗号也有可能会让整个句子的意义变得完全不同。
+同样地，标点符号对于编程语言来说也是至关重要的：比如 Go
+就需要依靠引号、圆括号和大括号等符号来理解用户输入的代码。</p>
+<blockquote>
+<div><p>{速查 1-3}</p>
+<ol class="arabic simple">
+<li><p>Go 程序从何处开始执行？</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fmt</span></code> 包提供了什么功能？</p></li>
+</ol>
+</div></blockquote>
+<blockquote>
+<div><p>{速查 1-3 答案}</p>
+<ol class="arabic simple">
+<li><p>Go 程序从 <code class="docutils literal notranslate"><span class="pre">main</span></code> 包的 <code class="docutils literal notranslate"><span class="pre">main</span></code> 函数开始执行。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fmt</span></code> 包提供了用于格式化输入和输出的函数。</p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="id4">
+<h2>1.4 唯一无二的大括号风格<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>Go 对于大括号 <code class="docutils literal notranslate"><span class="pre">{}</span></code> 的摆放位置非常挑剔。 在代码清单 1-1 中，左大括号
+<code class="docutils literal notranslate"><span class="pre">{</span></code> 跟 <code class="docutils literal notranslate"><span class="pre">func</span></code> 关键字位于同一行，而右大括号 <code class="docutils literal notranslate"><span class="pre">}</span></code> 则独占一行。 这是
+Go
+语言<em>唯一允许的大括号放置风格</em>，除此之外的其他风格都是不被允许的。
+作为参考，<a class="reference external" href="http://mng.bz/NdE2">mng.bz/NdE2</a>
+展示了各种不同的大括号放置风格。</p>
+<p>Go
+之所以如此严格地限制大括号的放置风格，跟这门语言刚刚诞生时发生的一些事情有关。
+在早期，使用 Go
+编写的代码总是无一幸免地带有分号，它们就像迷路的小狗一样跟在每条单独的语句后面，比如这样：</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Hello, fire hydrant&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>到了 2009 年 12 月，一群忍者 gopher 决定把分号从语言中驱逐出去。
+好吧，这么说也不太准确。 实际上，Go
+编译器将为你代劳，自动地插入那些可爱的分号。
+这种机制运行得非常完美，但它的代价就是要求用户必须遵守上面提到的<em>唯一无二的大括号放置风格</em>。</p>
+<img alt="../_images/kongfu.jpg" src="../_images/kongfu.jpg" />
+<p>如果用户尝试将左大括号和 <code class="docutils literal notranslate"><span class="pre">func</span></code> 关键字放在不同的行里面，那么 Go
+将报告一个语法错误：</p>
+<hr class="docutils" />
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span>      <span class="c1">// 函数体缺失</span>
+<span class="p">{</span>                <span class="c1">// 语法错误：在 { 之前发现了意料之外的分号或新行</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>出现这个问题并不是编译器有意刁难，这纯粹是由于分号被插入到了错误的位置，导致编译器犯了点小迷糊，最终才不得不求助于你。</p>
+<blockquote>
+<div><p>{提示}</p>
+<p>在阅读本书的时候，
+亲力亲为、不厌其烦地键入书中展示的每段代码将是一个不错的主意。
+这样一来， 如果你键入了错误的代码， 那么就会看到相应的语法错误，
+但这并不是一件坏事。
+能够阅读、理解并纠正代码中的错误是一种至关重要的技能，
+而且坚持不懈也是一种宝贵的品质。</p>
+</div></blockquote>
+<blockquote>
+<div><p>{速查 1-4}</p>
+<p>用户必须将左大括号 <code class="docutils literal notranslate"><span class="pre">{</span></code> 置于何处才能避免引起语法错误？</p>
+</div></blockquote>
+<blockquote>
+<div><p>{速查 1-4 答案}</p>
+<p>左大括号必须与 <code class="docutils literal notranslate"><span class="pre">func</span></code> 关键字位于同一行而不是独占一行， 这是 Go
+语言唯一允许的大括号放置风格。</p>
+</div></blockquote>
+</div>
+<div class="section" id="id5">
+<h2>1.5 课后小结<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>通过 Go 游乐场，我们可以在不必安装任何东西的情况下开始使用 Go 。</p></li>
+<li><p>每个 Go 程序都由包（package）中包含的函数组成。</p></li>
+<li><p>为了将文本输出至屏幕，我们需要用到标准库提供的 <code class="docutils literal notranslate"><span class="pre">fmt</span></code> 包。</p></li>
+<li><p>跟自然语言一样，编程语言中的标点符号也是至关重要的。</p></li>
+<li><p>到目前为止，我们已经看见了 Go 25 个关键字中的 3 个，它们分别是：
+<code class="docutils literal notranslate"><span class="pre">package</span></code> 、 <code class="docutils literal notranslate"><span class="pre">import</span></code> 和 <code class="docutils literal notranslate"><span class="pre">func</span></code> 。</p></li>
+</ul>
+<p>为了确认你是否已经弄懂了前面介绍的知识，请按照接下来展示的练习修改 Go
+游乐场中的代码，并点击运行按钮来查看结果。
+如果你在做练习的过程中遇到麻烦无法继续下去，那么可以通过刷新浏览器来让代码回到最初的样子。</p>
+<div class="section" id="playground-go">
+<h3>实验：playground.go<a class="headerlink" href="#playground-go" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p>修改代码中被引号包围的文本，使得程序在将文本打印至屏幕时，可以通过你的名字向你打招呼。</p></li>
+<li><p>在 <code class="docutils literal notranslate"><span class="pre">main</span></code> 函数的函数体 <code class="docutils literal notranslate"><span class="pre">{}</span></code>
+之内添加第二行代码，使得程序可以打印出两个文本行。就像这样：</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Hello, world&quot;</span><span class="p">)</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Hello, 世界&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Go 支持所有自然语言字符。
+你可以尝试让程序用中文、日文、俄罗斯文甚至是西班牙文打印文本。
+如果你不会说上述提到的这些语言，那么可以先通过 Google
+翻译工具（<a class="reference external" href="translate.google.com">translate.google.com</a>）进行翻译，然后再把翻译后的文本复制/粘贴到
+Go 游乐场。</p></li>
+</ul>
+<p>你可以通过点击 Go
+游乐场中的分享按钮来获得访问当前代码的链接，然后将该链接发布至本书的论坛
+<a class="reference external" href="forums.manning.com/forums/get-programming-with-go">forums.manning.com/forums/get-programming-with-go</a>
+与其他读者进行分享。</p>
+<p>最后，你可以将你的解法和附录中展示的参考答案进行对比，从而判断其是否正确。</p>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, 黄健宏.<br/>
+      由 <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1 创建。<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

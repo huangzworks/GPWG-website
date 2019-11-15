@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>第 4 章：变量作用域 &#8212; GPWGCN.com 1.0 文档</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="第 5 章：单元实验——前往火星的航行票" href="lession5.html" />
+    <link rel="prev" title="第 3 章：循环和分支" href="lession3.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          GPWGCN.com</a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="preface.html">译者序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foreword.html">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ack.html">致谢</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_this_book.html">关于本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_the_authors.html">关于作者</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lession1.html">第 1 章：各就各位，预备，Go！</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="lession2.html">第 2 章：被美化的计算器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lession3.html">第 3 章：循环和分支</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">第 4 章：变量作用域</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lession5.html">第 5 章：单元实验——前往火星的航行票</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">导航 <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">第 4 章：变量作用域</a><ul>
+<li><a class="reference internal" href="#id2">4.1 审视作用域</a></li>
+<li><a class="reference internal" href="#id3">4.2 简短声明</a></li>
+<li><a class="reference internal" href="#id4">4.3 作用域的范围</a></li>
+<li><a class="reference internal" href="#id5">4.4 课后小结</a><ul>
+<li><a class="reference internal" href="#random-dates-go">实验： <code class="docutils literal notranslate"><span class="pre">random-dates.go</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="lession3.html" title="Previous Chapter: 第 3 章：循环和分支"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 第 3 章：循环和分支</span>
+    </a>
+  </li>
+  <li>
+    <a href="lession5.html" title="Next Chapter: 第 5 章：单元实验——前往火星的航行票"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">第 5 章：单元实验——前往火星的航行票 &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <div class="section" id="id1">
+<h1>第 4 章：变量作用域<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>阅读本课程能够帮助你：</p>
+<ul class="simple">
+<li><p>知悉变量作用域的好处</p></li>
+<li><p>学会用更简洁的方式声明变量</p></li>
+<li><p>了解到 <code class="docutils literal notranslate"><span class="pre">for</span></code> 、 <code class="docutils literal notranslate"><span class="pre">if</span></code> 和 <code class="docutils literal notranslate"><span class="pre">switch</span></code> 是如何与变量作用域相互协作的</p></li>
+<li><p>学会如何控制作用域的范围</p></li>
+</ul>
+<p>在程序运行的过程中，很多变量都会在短暂使用之后被丢弃，这是由编程语言的<em>作用域规则</em>决定的。</p>
+<blockquote>
+<div><p>{请考虑这一点}</p>
+<p>你可以在脑海里面一次记住多少东西？</p>
+<p>据说人类的短期记忆最多只能记住大概 7 样东西，
+比如七位数的电话号码就是一个很好的例子。</p>
+<p>虽然计算机的短期记忆存储器或者说随机访问存储器（RAM）可以记住大量值，
+但是别忘了， 程序代码除了需要被计算机读取之外， 还需要被人类阅读，
+所以它还是应该尽可能地保持简洁。</p>
+<p>与此类似， 如果程序中的变量可以随时修改又或者在任何位置随意访问，
+那么光是跟踪大型程序中的变量就足以让人手忙脚乱。
+变量作用域的好处是可以让程序员聚焦于特定函数或者部分代码的相关变量，
+而不需要考虑除此之外的其他变量。</p>
+</div></blockquote>
+<div class="section" id="id2">
+<h2>4.1 审视作用域<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>变量从声明之时开始就处于<em>作用域</em>当中，换句话来说变量就是从那时开始变为可见的（visible）。
+只要变量仍然存在于作用域当中，程序就可以随时访问它，然而变量一旦离开作用域，尝试继续访问它将引发错误。</p>
+<p>变量作用域的其中一个好处是让我们可以为不同的变量重用相同的名字。
+因为除了极少数小型程序之外，程序的变量几乎不可能不出现重名。</p>
+<p>除此之外，变量作用域还能够帮助我们更好地阅读代码，让我们无需在脑海里记住所有变量。
+毕竟一旦某个变量离开了作用域，我们就不必再关心它了。</p>
+<img alt="../_images/watch.jpg" src="../_images/watch.jpg" />
+<p>Go 的作用域通常会随着大括号 <code class="docutils literal notranslate"><span class="pre">{}</span></code> 的出现而开启和结束。
+在接下来展示的代码清单 4-1 中，<code class="docutils literal notranslate"><span class="pre">main</span></code> 函数开启了一个作用域，而
+<code class="docutils literal notranslate"><span class="pre">for</span></code> 循环则开启了一个嵌套作用域。</p>
+<hr class="docutils" />
+<p>代码清单 4-1 作用域规则： <code class="docutils literal notranslate"><span class="pre">scope.go</span></code></p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+    <span class="s">&quot;fmt&quot;</span>
+    <span class="s">&quot;math/rand&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">count</span> <span class="p">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="nx">count</span> <span class="p">&lt;</span> <span class="mi">10</span> <span class="p">{</span>    <span class="c1">// 开启新的作用域</span>
+        <span class="kd">var</span> <span class="nx">num</span> <span class="p">=</span> <span class="nx">rand</span><span class="p">.</span><span class="nx">Intn</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span>
+
+        <span class="nx">count</span><span class="o">++</span>
+    <span class="p">}</span>   <span class="c1">// 作用域结束</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>因为 <code class="docutils literal notranslate"><span class="pre">count</span></code> 变量的声明位于 <code class="docutils literal notranslate"><span class="pre">main</span></code>
+函数的<em>函数作用域</em>之内，所以它在 <code class="docutils literal notranslate"><span class="pre">main</span></code> 函数结束之前将一直可见。
+反观 <code class="docutils literal notranslate"><span class="pre">num</span></code> 变量，因为它的声明位于 <code class="docutils literal notranslate"><span class="pre">for</span></code>
+循环的作用域之内，所以它在循环结束之后便不再可见。</p>
+<p>尝试在循环结束之后访问 <code class="docutils literal notranslate"><span class="pre">num</span></code> 变量将引发 Go 编译器报错。
+与之相对的是，因为 <code class="docutils literal notranslate"><span class="pre">count</span></code> 变量的声明位于 <code class="docutils literal notranslate"><span class="pre">for</span></code>
+循环之外，所以即使在循环结束之后，程序也可以在有需要的时候继续访问
+<code class="docutils literal notranslate"><span class="pre">count</span></code> 变量。 另一方面，如果我们想要把 <code class="docutils literal notranslate"><span class="pre">count</span></code>
+变量也限制在循环的作用域之内，那么就需要用到在 Go
+中声明变量的另一种方式。</p>
+<blockquote>
+<div><p>{速查 4-1}</p>
+<ol class="arabic simple">
+<li><p>变量作用域对我们有什么好处？</p></li>
+<li><p>变量在脱离作用域之后会发生什么事情？ 请修改代码清单 4-1 ，
+尝试在循环结束之后访问 <code class="docutils literal notranslate"><span class="pre">num</span></code> 变量， 看看会什么发生什么事情？</p></li>
+</ol>
+</div></blockquote>
+<blockquote>
+<div><p>{速查 4-1 答案}</p>
+<ol class="arabic simple">
+<li><p>作用域可以让我们在多个不同的地方使用相同的变量名而不会引发任何冲突，
+并且在编程的时候只需要考虑位于当前作用域之内的变量即可。</p></li>
+<li><p>脱离作用域的变量将变得不可见并且无法访问。 尝试在 <code class="docutils literal notranslate"><span class="pre">num</span></code>
+变量的作用域之外访问它将导致 Go
+编译器报告以下错误：<code class="docutils literal notranslate"><span class="pre">undefined:</span> <span class="pre">num</span></code> 。</p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h2>4.2 简短声明<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>简短声明为 <code class="docutils literal notranslate"><span class="pre">var</span></code> 关键字提供了另一种备选语法。
+以下两行代码是完全等效的：</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">count</span> <span class="p">=</span> <span class="mi">10</span>
+<span class="nx">count</span> <span class="o">:=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+<p>初看上去，少键入两三个字符似乎不算什么，但小数怕长计，所以简短声明还是要比
+<code class="docutils literal notranslate"><span class="pre">var</span></code> 关键字流行得多。 更重要的是，简短声明还可以用在一些 <code class="docutils literal notranslate"><span class="pre">var</span></code>
+关键字无法使用的地方。</p>
+<p>代码清单 4-2 展示了 <code class="docutils literal notranslate"><span class="pre">for</span></code>
+循环的另一种形式，它包含了初始化语句、比较条件语句以及对 <code class="docutils literal notranslate"><span class="pre">count</span></code>
+变量执行减法运算的后置语句。 在使用这种形式的 <code class="docutils literal notranslate"><span class="pre">for</span></code>
+循环时，我们需要依次向循环提供初始化语句、比较条件语句和后置语句。</p>
+<hr class="docutils" />
+<p>代码清单 4-2 更简洁的倒数程序： <code class="docutils literal notranslate"><span class="pre">loop.go</span></code></p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">count</span> <span class="p">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="nx">count</span> <span class="p">=</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">count</span> <span class="p">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">count</span><span class="o">--</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">count</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">count</span><span class="p">)</span>  <span class="c1">// count 变量仍然处于作用域之内</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>在不使用简短声明的情况下，<code class="docutils literal notranslate"><span class="pre">count</span></code>
+变量的声明必须放置在循环之外，这意味着 <code class="docutils literal notranslate"><span class="pre">count</span></code>
+变量将在循环结束之后继续存在于作用域。</p>
+<p>但是正如代码清单 4-3 所示，在使用简短声明的情况下，<code class="docutils literal notranslate"><span class="pre">count</span></code>
+变量的声明和初始化将成为 <code class="docutils literal notranslate"><span class="pre">for</span></code>
+循环的一部分，并且该变量将在循环结束之后脱离作用域，而尝试在循环之外访问
+<code class="docutils literal notranslate"><span class="pre">count</span></code> 变量将导致 Go 编译器报告 <code class="docutils literal notranslate"><span class="pre">undefined:</span> <span class="pre">count</span></code> 错误。</p>
+<hr class="docutils" />
+<p>代码清单 4-3 在 <code class="docutils literal notranslate"><span class="pre">for</span></code> 循环中使用简短声明： <code class="docutils literal notranslate"><span class="pre">short-loop.go</span></code></p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="nx">count</span> <span class="o">:=</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">count</span> <span class="p">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">count</span><span class="o">--</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">count</span><span class="p">)</span>
+<span class="p">}</span>    <span class="c1">// 随着循环结束，count 变量将不再处于作用域之内。</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<blockquote>
+<div><p>{提示}</p>
+<p>为了代码的可读性考虑，
+声明变量的位置和使用变量的位置应该尽可能地贴近。</p>
+</div></blockquote>
+<p>除了 <code class="docutils literal notranslate"><span class="pre">for</span></code> 循环之外，简短声明还可以在 <code class="docutils literal notranslate"><span class="pre">if</span></code> 语句里面声明新的变量。
+比如代码清单 4-4 中的 <code class="docutils literal notranslate"><span class="pre">num</span></code> 变量就可以用在 <code class="docutils literal notranslate"><span class="pre">if</span></code> 语句的所有分支当中。</p>
+<hr class="docutils" />
+<p>代码清单 4-4 在 <code class="docutils literal notranslate"><span class="pre">if</span></code> 语句中使用简短声明： <code class="docutils literal notranslate"><span class="pre">short-if.go</span></code></p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="nx">num</span> <span class="o">:=</span> <span class="nx">rand</span><span class="p">.</span><span class="nx">Intn</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="nx">num</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Space Adventures&quot;</span><span class="p">)</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">num</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;SpaceX&quot;</span><span class="p">)</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Virgin Galactic&quot;</span><span class="p">)</span>
+<span class="p">}</span>    <span class="c1">// 随着 if 语句结束，num 变量将不再处于作用域之内。</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>正如代码清单 4-5 所示，跟 <code class="docutils literal notranslate"><span class="pre">if</span></code> 语言一样，简短声明也可以用在 <code class="docutils literal notranslate"><span class="pre">switch</span></code>
+语句里面。</p>
+<hr class="docutils" />
+<p>代码清单 4-5 在 <code class="docutils literal notranslate"><span class="pre">switch</span></code> 语句中使用简短声明： <code class="docutils literal notranslate"><span class="pre">short-switch.go</span></code></p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="k">switch</span> <span class="nx">num</span> <span class="o">:=</span> <span class="nx">rand</span><span class="p">.</span><span class="nx">Intn</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span> <span class="nx">num</span> <span class="p">{</span>
+<span class="k">case</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Space Adventures&quot;</span><span class="p">)</span>
+<span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;SpaceX&quot;</span><span class="p">)</span>
+<span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Virgin Galactic&quot;</span><span class="p">)</span>
+<span class="k">default</span><span class="p">:</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Random spaceline #&quot;</span><span class="p">,</span> <span class="nx">num</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<blockquote>
+<div><p>{速查 4-5}</p>
+<p>如果代码清单 4-4 和 4-5 不使用简短声明， 那么 <code class="docutils literal notranslate"><span class="pre">num</span></code>
+变量的作用域将产生何种变化？</p>
+</div></blockquote>
+<blockquote>
+<div><p>{速查 4-2 答案}</p>
+<p>因为 <code class="docutils literal notranslate"><span class="pre">if</span></code> 语句、 <code class="docutils literal notranslate"><span class="pre">switch</span></code> 语句和 <code class="docutils literal notranslate"><span class="pre">for</span></code>
+语句只能使用业已声明的变量， 所以在不使用简短声明的情况下，
+程序只能在 <code class="docutils literal notranslate"><span class="pre">if</span></code> 等语句的前面声明 <code class="docutils literal notranslate"><span class="pre">num</span></code> 变量， 从而导致该变量在
+<code class="docutils literal notranslate"><span class="pre">if</span></code> 等语句结束之后仍然存在于作用域。</p>
+</div></blockquote>
+</div>
+<div class="section" id="id4">
+<h2>4.3 作用域的范围<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>代码清单 4-6
+展示的程序能够生成并显示一个随机的日期（这个日期也许就是我们启程去火星的日期）。
+除此之外，这个程序还演示了 Go
+中的几种不同的作用域，并阐明了在声明变量时考虑作用域的重要性。</p>
+<hr class="docutils" />
+<p>代码清单 4-6 变量作用域规则： <code class="docutils literal notranslate"><span class="pre">scope-rules.go</span></code></p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+    <span class="s">&quot;fmt&quot;</span>
+    <span class="s">&quot;math/rand&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">var</span> <span class="nx">era</span> <span class="p">=</span> <span class="s">&quot;AD&quot;</span>      <span class="c1">// era 变量在整个包都是可用的。</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">year</span> <span class="o">:=</span> <span class="mi">2018</span>    <span class="c1">// era 变量和 year 变量都处于作用域之内。</span>
+
+    <span class="k">switch</span> <span class="nx">month</span> <span class="o">:=</span> <span class="nx">rand</span><span class="p">.</span><span class="nx">Intn</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">month</span> <span class="p">{</span>  <span class="c1">// 变量 era 、year 和 month 都处于作用域之内。</span>
+    <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="nx">day</span> <span class="o">:=</span> <span class="nx">rand</span><span class="p">.</span><span class="nx">Intn</span><span class="p">(</span><span class="mi">28</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>                <span class="c1">// 变量 era 、year 、month 和 day 都处于作用域之内。</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">era</span><span class="p">,</span> <span class="nx">year</span><span class="p">,</span> <span class="nx">month</span><span class="p">,</span> <span class="nx">day</span><span class="p">)</span>
+    <span class="k">case</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">:</span>
+        <span class="nx">day</span> <span class="o">:=</span> <span class="nx">rand</span><span class="p">.</span><span class="nx">Intn</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>                <span class="c1">// 这两个 day 变量是全新声明的变量，跟上面声明的同名变量并不相同。</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">era</span><span class="p">,</span> <span class="nx">year</span><span class="p">,</span> <span class="nx">month</span><span class="p">,</span> <span class="nx">day</span><span class="p">)</span>
+    <span class="k">default</span><span class="p">:</span>
+        <span class="nx">day</span> <span class="o">:=</span> <span class="nx">rand</span><span class="p">.</span><span class="nx">Intn</span><span class="p">(</span><span class="mi">31</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>                <span class="c1">// 这两个 day 变量是全新声明的变量，跟上面声明的同名变量并不相同。</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">era</span><span class="p">,</span> <span class="nx">year</span><span class="p">,</span> <span class="nx">month</span><span class="p">,</span> <span class="nx">day</span><span class="p">)</span>
+    <span class="p">}</span>   <span class="c1">// month 变量和 day 变量不再处于作用域之内。</span>
+<span class="p">}</span>       <span class="c1">// year 变量不再处于作用域之内。</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>因为 <code class="docutils literal notranslate"><span class="pre">era</span></code> 变量的声明位于 <code class="docutils literal notranslate"><span class="pre">main</span></code>
+函数之外的<em>包作用域</em>中，所以它对于 <code class="docutils literal notranslate"><span class="pre">main</span></code>
+包中的所有函数都是可见的。</p>
+<blockquote>
+<div><p>{注意}</p>
+<p>因为包作用域不允许使用简短声明， 所以我们无法在这个作用域中使用
+<code class="docutils literal notranslate"><span class="pre">era</span> <span class="pre">:=</span> <span class="pre">&quot;AD&quot;</span></code> 来进行声明。</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">year</span></code> 变量只在 <code class="docutils literal notranslate"><span class="pre">main</span></code> 函数中可见。
+如果包中还存在着其他函数，那么它们将会看见 <code class="docutils literal notranslate"><span class="pre">era</span></code> 变量，但是却无法看到
+<code class="docutils literal notranslate"><span class="pre">year</span></code> 变量。 <em>函数作用域</em>比包作用域要狭窄，它起始于 <code class="docutils literal notranslate"><span class="pre">func</span></code>
+关键字，并终结于函数声明的右大括号。</p>
+<p><code class="docutils literal notranslate"><span class="pre">month</span></code> 变量在整个 <code class="docutils literal notranslate"><span class="pre">switch</span></code> 语句的任何位置都可见，不过一旦
+<code class="docutils literal notranslate"><span class="pre">switch</span></code> 语句结束，<code class="docutils literal notranslate"><span class="pre">month</span></code> 就不再处于作用域之内了。 <code class="docutils literal notranslate"><span class="pre">switch</span></code>
+语句的作用域始于 <code class="docutils literal notranslate"><span class="pre">switch</span></code> 关键字，并终结于 <code class="docutils literal notranslate"><span class="pre">switch</span></code> 语句的右大括号。</p>
+<p>因为 <code class="docutils literal notranslate"><span class="pre">switch</span></code> 的每个 <code class="docutils literal notranslate"><span class="pre">case</span></code>
+分支都拥有自己独立的作用域，所以三个分支分别拥有三个独立的 <code class="docutils literal notranslate"><span class="pre">day</span></code>
+变量。 在每个分支结束之后，该分支声明的 <code class="docutils literal notranslate"><span class="pre">day</span></code>
+变量将不再处于作用域之内。 <code class="docutils literal notranslate"><span class="pre">switch</span></code>
+分支的作用域是唯一一种无需使用大括号标识的作用域。</p>
+<p>代码清单 4-6 中的代码距离完美还有相当远的一段距离。 变量 <code class="docutils literal notranslate"><span class="pre">month</span></code> 和
+<code class="docutils literal notranslate"><span class="pre">day</span></code> 狭窄的作用域导致 <code class="docutils literal notranslate"><span class="pre">Println</span></code>
+重复出现了三次，这种代码重复可能会引发修改，并因此导致错误。
+比如说，我们可能会决定不再在每个分支中都打印 <code class="docutils literal notranslate"><span class="pre">era</span></code>
+变量，但是却忘记了修改某个分支。
+在某些情况下，出现代码重复是正常的，但这种情况通常被认为是代码的<em>坏味道</em>，需要谨慎地处理。</p>
+<p>为了消除重复并简化代码，我们需要将代码清单 4-6
+中的某些变量声明移动到范围更宽广的函数作用域中，使得这些变量可以在
+<code class="docutils literal notranslate"><span class="pre">switch</span></code> 语句结束之后继续为程序所用。
+为此，我们需要对代码实施<em>重构</em>，也即是在不改变代码行为的基础上对代码进行修改。
+重构得出的代码清单 4-7
+跟之前的代码行为完全相同，它们都可以选取并打印出随机的日期。</p>
+<hr class="docutils" />
+<p>代码清单 4-7 重构后的随机日期选取程序： <code class="docutils literal notranslate"><span class="pre">random-date.go</span></code></p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+    <span class="s">&quot;fmt&quot;</span>
+    <span class="s">&quot;math/rand&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">var</span> <span class="nx">era</span> <span class="p">=</span> <span class="s">&quot;AD&quot;</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">year</span> <span class="o">:=</span> <span class="mi">2018</span>
+    <span class="nx">month</span> <span class="o">:=</span> <span class="nx">rand</span><span class="p">.</span><span class="nx">Intn</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="nx">daysInMonth</span> <span class="o">:=</span> <span class="mi">31</span>
+
+    <span class="k">switch</span> <span class="nx">month</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="nx">daysInMonth</span> <span class="p">=</span> <span class="mi">28</span>
+    <span class="k">case</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">:</span>
+        <span class="nx">daysInMonth</span> <span class="p">=</span> <span class="mi">30</span>
+    <span class="p">}</span>
+
+    <span class="nx">day</span> <span class="o">:=</span> <span class="nx">rand</span><span class="p">.</span><span class="nx">Intn</span><span class="p">(</span><span class="nx">daysInMonth</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">era</span><span class="p">,</span> <span class="nx">year</span><span class="p">,</span> <span class="nx">month</span><span class="p">,</span> <span class="nx">day</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>尽管狭窄的作用域有助于减少脑力负担，但代码清单 4-6
+的例子也表明了过分约束变量将<em>损害</em>代码的可读性。
+在遇到这种问题的时候，我们应该根据具体情况逐步实施重构，直到代码的可读性能够满足我们的要求为止。</p>
+<blockquote>
+<div><p>{速查 4-3}</p>
+<p>请说出一种能够鉴别变量是否被约束得太紧的方法。</p>
+</div></blockquote>
+<blockquote>
+<div><p>{速查 4-3 答案}</p>
+<p>如果代码重复是由变量声明引起的， 那么变量可能就是被约束得太紧了。</p>
+</div></blockquote>
+</div>
+<div class="section" id="id5">
+<h2>4.4 课后小结<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>左大括号 <code class="docutils literal notranslate"><span class="pre">{</span></code> 开启一个新的作用域而右大括号 <code class="docutils literal notranslate"><span class="pre">}</span></code> 则结束该作用域。</p></li>
+<li><p>虽然没有用到大括号，但关键字 <code class="docutils literal notranslate"><span class="pre">case</span></code> 和 <code class="docutils literal notranslate"><span class="pre">default</span></code>
+也都引入了新的作用域。</p></li>
+<li><p>声明变量的位置决定了变量所处的作用域。</p></li>
+<li><p>简短声明不仅仅是 <code class="docutils literal notranslate"><span class="pre">var</span></code> 声明的快捷方式，它还可以用在 <code class="docutils literal notranslate"><span class="pre">var</span></code>
+声明无法使用的地方。</p></li>
+<li><p>在 <code class="docutils literal notranslate"><span class="pre">for</span></code> 语句、 <code class="docutils literal notranslate"><span class="pre">if</span></code> 语句和 <code class="docutils literal notranslate"><span class="pre">switch</span></code>
+语句所在行声明的变量，其作用域将持续至语句结束为止。</p></li>
+<li><p>宽广的作用域有时候会比狭窄的作用域更好，反之亦然。</p></li>
+</ul>
+<p>为了检验你是否已经掌握了上述知识，请尝试完成以下实验。</p>
+<div class="section" id="random-dates-go">
+<h3>实验： <code class="docutils literal notranslate"><span class="pre">random-dates.go</span></code><a class="headerlink" href="#random-dates-go" title="永久链接至标题">¶</a></h3>
+<p>请修改代码清单 4-7 ，让它可以处理闰年：</p>
+<ul class="simple">
+<li><p>生成一个随机年份而不是一直使用 <code class="docutils literal notranslate"><span class="pre">2018</span></code> 年。</p></li>
+<li><p>如果生成的年份为闰年，那么将一月份的 <code class="docutils literal notranslate"><span class="pre">daysInMonth</span></code> 变量的值设置为
+29 ，反之则将其设置为 28 。 提示：你可以在 <code class="docutils literal notranslate"><span class="pre">case</span></code> 代码块的内部放置
+<code class="docutils literal notranslate"><span class="pre">if</span></code> 语句。</p></li>
+<li><p>使用 <code class="docutils literal notranslate"><span class="pre">for</span></code> 循环生成并显示 10 个随机日期。</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, 黄健宏.<br/>
+      由 <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1 创建。<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

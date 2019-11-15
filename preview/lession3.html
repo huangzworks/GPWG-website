@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>第 3 章：循环和分支 &#8212; GPWGCN.com 1.0 文档</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="第 4 章：变量作用域" href="lession4.html" />
+    <link rel="prev" title="第 2 章：被美化的计算器" href="lession2.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          GPWGCN.com</a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="preface.html">译者序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foreword.html">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ack.html">致谢</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_this_book.html">关于本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_the_authors.html">关于作者</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lession1.html">第 1 章：各就各位，预备，Go！</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="lession2.html">第 2 章：被美化的计算器</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">第 3 章：循环和分支</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lession4.html">第 4 章：变量作用域</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lession5.html">第 5 章：单元实验——前往火星的航行票</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">导航 <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">第 3 章：循环和分支</a><ul>
+<li><a class="reference internal" href="#id2">3.1 真或假</a></li>
+<li><a class="reference internal" href="#id3">3.2 比较</a></li>
+<li><a class="reference internal" href="#if">3.2 使用 <code class="docutils literal notranslate"><span class="pre">if</span></code> 实现分支判断</a></li>
+<li><a class="reference internal" href="#id4">3.4 逻辑运算符</a></li>
+<li><a class="reference internal" href="#switch">3.5 使用 <code class="docutils literal notranslate"><span class="pre">switch</span></code> 实现分支判断</a></li>
+<li><a class="reference internal" href="#id5">3.6 使用循环实现重复执行</a></li>
+<li><a class="reference internal" href="#id6">3.7 课后小结</a><ul>
+<li><a class="reference internal" href="#guess-go">实验： <code class="docutils literal notranslate"><span class="pre">guess.go</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="lession2.html" title="Previous Chapter: 第 2 章：被美化的计算器"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 第 2 章：被美化的计算器</span>
+    </a>
+  </li>
+  <li>
+    <a href="lession4.html" title="Next Chapter: 第 4 章：变量作用域"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">第 4 章：变量作用域 &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <div class="section" id="id1">
+<h1>第 3 章：循环和分支<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>阅读本课程能够帮助你：</p>
+<ul class="simple">
+<li><p>学会如何让计算机通过 <code class="docutils literal notranslate"><span class="pre">if</span></code> 和 <code class="docutils literal notranslate"><span class="pre">switch</span></code> 做选择</p></li>
+<li><p>学会使用 <code class="docutils literal notranslate"><span class="pre">for</span></code> 重复执行指定的代码</p></li>
+<li><p>学会基于条件实现循环和分支处理</p></li>
+</ul>
+<p>计算机程序很少能够像小说那样从开头一直读到结尾，它们更像是那种能够自选结局的故事书和交互小说，后者可以基于特定条件选择不同路径，又或者重复相同步骤直到满足指定条件为止。</p>
+<p>如果你对 <code class="docutils literal notranslate"><span class="pre">if</span></code> 、 <code class="docutils literal notranslate"><span class="pre">else</span></code> 以及 <code class="docutils literal notranslate"><span class="pre">for</span></code>
+这三个见诸于多种编程语言的关键字已经非常熟悉，那么可以把本课程看作是 Go
+语法的快速简介。</p>
+<blockquote>
+<div><p>{请考虑这一点}</p>
+<p>作者 Nathan 年轻时跟家人一起长途旅行的时候，
+会一起玩“二十个问题”（Twenty Questions）游戏来消磨时间：
+一个人心里要想着一样东西，
+而其他人则通过提问的方式来猜测这个东西是什么，
+并且被提问的人只能回答“是”或者“不是”。
+类似“它有多大？”这样的问题是无法回答的，
+更常见的问法是“它比烤面包机要大吗？”。</p>
+<p>计算机程序同样基于是/否问题执行操作。
+对于类似“是否比烤面包机要大”这样的条件，
+计算机处理器要么继续执行后续步骤， 要么通过 <code class="docutils literal notranslate"><span class="pre">JMP</span></code>
+指令跳转至程序的其他位置，
+至于复杂的决策则会被分解成多个更小和更简单的条件。</p>
+<p>以你今天所穿的衣服为例， 你是如何挑选每一件衣服的呢，
+其中又取决于哪些因素？
+你是根据天气预报、当天的活动计划、衣服是否完好或者是否潮流来挑选衣服的吗，
+又或者你只是随心所欲地挑选了一套， 根本没考虑那么多？
+如果你要写一个程序来决定早上如何穿衣打扮的话，
+那么你会提出哪些只能回答“是”或者“否”的问题呢？</p>
+</div></blockquote>
+<div class="section" id="id2">
+<h2>3.1 真或假<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>在阅读能够自选结局的故事书时，你会碰到类似以下这样的选择：</p>
+<blockquote>
+<div><p>如果你选择走出洞穴， 那么请翻到第 21 页。 —— Edward
+Packard，《时间的洞穴》</p>
+</div></blockquote>
+<p>在 Go 中，诸如“是否走出洞穴”这样的问题可以用 <code class="docutils literal notranslate"><span class="pre">ture</span></code> 和 <code class="docutils literal notranslate"><span class="pre">false</span></code>
+这两个预定义常量来回答。 你可以像这样使用这两个常量：</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">walkOutside</span> <span class="p">=</span> <span class="kc">true</span>
+<span class="kd">var</span> <span class="nx">takeTheBluePill</span> <span class="p">=</span> <span class="kc">false</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>{注意}</p>
+<p>某些编程语言对于“真”的定义比较宽松。 比如 Python 和 JavaScript
+就把空文本 <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> 和数字零看作是“假”， 但是 Ruby 和 Elixir
+却把这两个值看作是“真”。 对于 Go 来说， <code class="docutils literal notranslate"><span class="pre">true</span></code> 是唯一的真值， 而
+<code class="docutils literal notranslate"><span class="pre">flase</span></code> 则是唯一的假值。</p>
+</div></blockquote>
+<p>为了纪念 19 世纪时的数学家乔治·布尔，我们把“真”和“假”称为<em>布尔</em>值。
+Go 的标准库里面有好些函数都会返回布尔值。 比如在接下来的代码清单 3-1
+里面，程序就使用了 <code class="docutils literal notranslate"><span class="pre">strings</span></code> 包中的 <code class="docutils literal notranslate"><span class="pre">Contains</span></code> 函数来检查
+<code class="docutils literal notranslate"><span class="pre">command</span></code>
+变量是否包含单词“outside”，并且由于这一问题的答案为真，所以函数将返回
+<code class="docutils literal notranslate"><span class="pre">true</span></code> 作为结果。</p>
+<hr class="docutils" />
+<p>代码清单 3-1 返回布尔值的函数： <code class="docutils literal notranslate"><span class="pre">contains.go</span></code></p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+    <span class="s">&quot;fmt&quot;</span>
+    <span class="s">&quot;strings&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;You find yourself in a dimly lit cavern.&quot;</span><span class="p">)</span>
+
+    <span class="kd">var</span> <span class="nx">command</span> <span class="p">=</span> <span class="s">&quot;walk outside&quot;</span>
+    <span class="kd">var</span> <span class="nx">exit</span> <span class="p">=</span> <span class="nx">strings</span><span class="p">.</span><span class="nx">Contains</span><span class="p">(</span><span class="nx">command</span><span class="p">,</span> <span class="s">&quot;outside&quot;</span><span class="p">)</span>
+
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;You leave the cave:&quot;</span><span class="p">,</span> <span class="nx">exit</span><span class="p">)</span>    <span class="c1">// 打印文本“You leave the cave: true”</span>
+ <span class="p">}</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<blockquote>
+<div><p>{速查 3-1}</p>
+<ol class="arabic simple">
+<li><p>如果洞穴里面出现了令人目眩的正午阳光， 你该如何声明名为
+<code class="docutils literal notranslate"><span class="pre">wearShades</span></code> 的布尔变量呢？</p></li>
+<li><p>如果洞穴入口附近有一个指示牌，</p></li>
+</ol>
+<p>你该如何判断 <code class="docutils literal notranslate"><span class="pre">command</span></code> 变量是否包含单词 <code class="docutils literal notranslate"><span class="pre">&quot;read&quot;</span></code> 呢？</p>
+</div></blockquote>
+<blockquote>
+<div><p>{速查 3-2 答案}</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">var</span> <span class="pre">wearShades</span> <span class="pre">=</span> <span class="pre">true</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">var</span> <span class="pre">read</span> <span class="pre">=</span> <span class="pre">strings.Contains(command,</span> <span class="pre">&quot;read&quot;)</span></code></p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h2>3.2 比较<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>比较两个值是得出 <code class="docutils literal notranslate"><span class="pre">true</span></code> 或者 <code class="docutils literal notranslate"><span class="pre">false</span></code> 的另一种方式。 Go 提供了表 3-1
+所示的比较运算符。</p>
+<hr class="docutils" />
+<p>表 3-1 比较运算符</p>
+<table class="docutils align-center">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">==</span></code> 相等</p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">!=</span></code> 不相等</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> 小于</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code> 大于</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> 小于等于</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> 大于等于</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<p>表 3-1 中的运算符既可以比较文本，又可以比较数字。 比如下面的代码清单 3-2
+就展示了一个比较数字的例子。</p>
+<hr class="docutils" />
+<p>代码清单 3-2 比较数字： <code class="docutils literal notranslate"><span class="pre">compare.go</span></code></p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;There is a sign near the entrance that reads &#39;No Minors&#39;.&quot;</span><span class="p">)</span>
+
+<span class="kd">var</span> <span class="nx">age</span> <span class="p">=</span> <span class="mi">41</span>
+<span class="kd">var</span> <span class="nx">minor</span> <span class="p">=</span> <span class="nx">age</span> <span class="p">&lt;</span> <span class="mi">18</span>
+
+<span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;At age %v, am I a minor? %v\n&quot;</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">minor</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>运行这个代码清单，我们将得到以下输出：</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>There is a sign near the entrance that reads &#39;No Minors&#39;.
+At age 41, am I a minor? false
+</pre></div>
+</div>
+<blockquote>
+<div><p>{注意}</p>
+<p>JavaScript 和 PHP
+都提供了特殊的<em>三等号</em>（<em>threequals</em>）运算符来实现严格的相等性检查。
+在这些语言中， 宽松检查 <code class="docutils literal notranslate"><span class="pre">&quot;1&quot;</span> <span class="pre">==</span> <span class="pre">1</span></code> 的结果为真， 而严格检查
+<code class="docutils literal notranslate"><span class="pre">&quot;1&quot;</span>&#160; <span class="pre">===</span>&#160; <span class="pre">1</span></code> 的结果则为假。 Go 只提供了一个相等运算符，
+并且它不允许直接比较文本和数字。 本书将在第 10
+课演示如何将数字转换为文本， 以及如何将文本转换为数字。</p>
+</div></blockquote>
+<blockquote>
+<div><p>{速查 3-2}</p>
+<p><code class="docutils literal notranslate"><span class="pre">&quot;apple&quot;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&quot;banana&quot;</span></code> 这两个单词， 哪个更大一些？</p>
+</div></blockquote>
+<blockquote>
+<div><p>{速查 3-2 答案}</p>
+<p>因为语句 <code class="docutils literal notranslate"><span class="pre">fmt.Println(&quot;apple&quot;</span> <span class="pre">&gt;</span> <span class="pre">&quot;banana&quot;)</span></code> 的执行结果为 <code class="docutils literal notranslate"><span class="pre">false</span></code>
+， 所以单词 <code class="docutils literal notranslate"><span class="pre">&quot;banana&quot;</span></code> 比单词 <code class="docutils literal notranslate"><span class="pre">&quot;apple&quot;</span></code> 要大。</p>
+</div></blockquote>
+</div>
+<div class="section" id="if">
+<h2>3.2 使用 <code class="docutils literal notranslate"><span class="pre">if</span></code> 实现分支判断<a class="headerlink" href="#if" title="永久链接至标题">¶</a></h2>
+<p>正如代码清单 3-3 所示，计算机可以使用布尔值或者比较条件，在 <code class="docutils literal notranslate"><span class="pre">if</span></code>
+语句中选择不同的执行路径。</p>
+<hr class="docutils" />
+<p>代码清单 3-3 分支： <code class="docutils literal notranslate"><span class="pre">if.go</span></code></p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">command</span> <span class="p">=</span> <span class="s">&quot;go east&quot;</span>
+
+    <span class="k">if</span> <span class="nx">command</span> <span class="o">==</span> <span class="s">&quot;go east&quot;</span> <span class="p">{</span>           <span class="c1">// 检查命令是否为“go east”</span>
+         <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;You head further up the mountain.&quot;</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">command</span> <span class="o">==</span> <span class="s">&quot;go inside&quot;</span> <span class="p">{</span>  <span class="c1">// 在第一次检查为假之后，检查命令是否为“go inside”</span>
+         <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;You enter the cave where you live out the rest of your life.&quot;</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>                            <span class="c1">// 如果前两次检查都为假，那么执行第三个分支</span>
+         <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Didn&#39;t quite get that.&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>执行代码清单 3-3 ，我们将得到以下输出：</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="nx">You</span> <span class="nx">head</span> <span class="nx">further</span> <span class="nx">up</span> <span class="nx">the</span> <span class="nx">mountain</span><span class="p">.</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> 语句和 <code class="docutils literal notranslate"><span class="pre">else</span></code> 语句都是可选的。
+当有多个分支路径可选时，你可以重复使用 <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> 直到满足需要为止。</p>
+<blockquote>
+<div><p>{注意}</p>
+<p>如果你张冠李戴地误用了赋值操作符 <code class="docutils literal notranslate"><span class="pre">=</span></code> 来代替相等运算符 <code class="docutils literal notranslate"><span class="pre">==</span></code> ，
+那么 Go 将报告一个错误。</p>
+</div></blockquote>
+<blockquote>
+<div><p>{速查 3-3}</p>
+<p>冒险游戏通常会使用不同的空间作为场景。 请编写一个程序， 它使用 <code class="docutils literal notranslate"><span class="pre">if</span></code>
+和 <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> 分别打印出洞穴、入口和大山这三个空间的描述。
+在编写程序的过程中， 请记得一定要像代码清单 3-3 那样， 根据 Go
+唯一合法的括号风格来放置大括号 <code class="docutils literal notranslate"><span class="pre">{}</span></code> 。</p>
+</div></blockquote>
+<blockquote>
+<div><p>{速查 3-3 答案}</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+<span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">room</span> <span class="p">=</span> <span class="s">&quot;cave&quot;</span>
+      <span class="k">if</span> <span class="nx">room</span> <span class="o">==</span> <span class="s">&quot;cave&quot;</span> <span class="p">{</span>
+              <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;You find yourself in a dimly lit cavern.&quot;</span><span class="p">)</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">room</span> <span class="o">==</span> <span class="s">&quot;entrance&quot;</span> <span class="p">{</span>
+              <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;There is a cavern entrance here and a path to the east.&quot;</span><span class="p">)</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">room</span> <span class="o">==</span> <span class="s">&quot;mountain&quot;</span> <span class="p">{</span>
+              <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;There is a cliff here. A path leads west down the mountain.&quot;</span><span class="p">)</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Everything is white.&quot;</span><span class="p">)</span>
+      <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id4">
+<h2>3.4 逻辑运算符<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>在 Go 中，逻辑运算符 <code class="docutils literal notranslate"><span class="pre">||</span></code> 代表“<em>逻辑或</em>”，而逻辑运算符 <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>
+则代表“<em>逻辑与</em>”。 这些逻辑运算符可以一次检查多个条件，图 3-1 和 3-2
+展示了它们的求值方式。</p>
+<hr class="docutils" />
+<p>图 3-1 逻辑或：当 <code class="docutils literal notranslate"><span class="pre">a</span></code> 、 <code class="docutils literal notranslate"><span class="pre">b</span></code> 两值中至少有一个为真时， <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">||</span> <span class="pre">b</span></code> 为真</p>
+<img alt="../_images/3-1.jpg" src="../_images/3-1.jpg" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>图 3-2 逻辑与：当且仅当 <code class="docutils literal notranslate"><span class="pre">a</span></code> 、 <code class="docutils literal notranslate"><span class="pre">b</span></code> 两值都为真时， <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&amp;&amp;</span> <span class="pre">b</span></code> 为真</p>
+<img alt="../_images/3-2.jpg" src="../_images/3-2.jpg" />
+<hr class="docutils" />
+<p>代码清单 3-4 展示的是一段判断 2100
+年是否为闰年的程序，其中用到的判断指定年份是否为闰年的规则如下：</p>
+<ul class="simple">
+<li><p>能够被 4 整除但是不能被 100 整除的年份为闰年</p></li>
+<li><p>可以被 400 整除的年份也是闰年</p></li>
+</ul>
+<blockquote>
+<div><p>{注意}</p>
+<p>正如之前所说， 取模运算符 <code class="docutils literal notranslate"><span class="pre">%</span></code> 可以计算出两个整数相除时所得的余数，
+而余数为零则表示一个数被另一个数整除了。</p>
+</div></blockquote>
+<img alt="../_images/gopher1.jpg" src="../_images/gopher1.jpg" />
+<hr class="docutils" />
+<p>代码清单 3-4 闰年识别器： <code class="docutils literal notranslate"><span class="pre">leap.go</span></code></p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;The year is 2100, should you leap?&quot;</span><span class="p">)</span>
+
+<span class="kd">var</span> <span class="nx">year</span> <span class="p">=</span> <span class="mi">2100</span>
+<span class="kd">var</span> <span class="nx">leap</span> <span class="p">=</span> <span class="nx">year</span><span class="o">%</span><span class="mi">400</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="p">(</span><span class="nx">year</span><span class="o">%</span><span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">year</span><span class="o">%</span><span class="mi">100</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="nx">leap</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Look before you leap!&quot;</span><span class="p">)</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Keep your feet on the ground.&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>执行代码清单 3-4 中的程序将得到以下输出：</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>The year is 2100, should you leap?
+Keep your feet on the ground.
+</pre></div>
+</div>
+<p>跟大多数编程语言一样，Go 也采用了<em>短路逻辑</em>： 如果位于 <code class="docutils literal notranslate"><span class="pre">||</span></code>
+运算符之前的第一个条件为真，那么位于运算符之后的条件就可以被忽略，没有必要再对其进行求值。
+具体到代码清单 3-4 中的例子，当给定年份可以被 400
+整除时，程序就不必再进行后续的判断了。</p>
+<p><code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> 运算符的行为跟 <code class="docutils literal notranslate"><span class="pre">||</span></code> 运算符正好相反：
+只有在两个条件都为真的情况下，运算结果才会为真。 对于代码清单 3-4
+中的例子，如果给定年份无法被 4 整除，那么程序就不会求值后续条件。</p>
+<p><em>逻辑非</em>运算符 <code class="docutils literal notranslate"><span class="pre">!</span></code> 可以将一个布尔值从 <code class="docutils literal notranslate"><span class="pre">false</span></code> 转变为 <code class="docutils literal notranslate"><span class="pre">true</span></code>
+，又或者将 <code class="docutils literal notranslate"><span class="pre">true</span></code> 转变为 <code class="docutils literal notranslate"><span class="pre">false</span></code> 。 作为例子，代码清单 3-5
+将在玩家没有火把或者未点燃火把时打印出一条信息。</p>
+<hr class="docutils" />
+<p>代码清单 3-5 逻辑非运算符： <code class="docutils literal notranslate"><span class="pre">torch.go</span></code></p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">haveTorch</span> <span class="p">=</span> <span class="kc">true</span>
+<span class="kd">var</span> <span class="nx">litTorch</span> <span class="p">=</span> <span class="kc">false</span>
+
+<span class="k">if</span> <span class="p">!</span><span class="nx">haveTorch</span> <span class="o">||</span> <span class="p">!</span><span class="nx">litTorch</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Nothing to see here.&quot;</span><span class="p">)</span> <span class="c1">// 打印出“Nothing to see here.”</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<blockquote>
+<div><p>{速查 3-4}</p>
+<ol class="arabic simple">
+<li><p>首先请使用纸和笔， 将代码清单 3-4 中闰年表达式的年份替换为
+<code class="docutils literal notranslate"><span class="pre">2000</span></code> ； 接着求值所有取模运算，
+计算出它们的余数（如果有需要可以使用计算器）； 在此之后， 求值
+<code class="docutils literal notranslate"><span class="pre">==</span></code> 和 <code class="docutils literal notranslate"><span class="pre">!=</span></code> 条件以得出 <code class="docutils literal notranslate"><span class="pre">true</span></code> 或者 <code class="docutils literal notranslate"><span class="pre">false</span></code> ； 最后，
+求值逻辑运算符 <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">||</span></code> ， 并最终判断出 2000
+年是否为闰年。</p></li>
+<li><p>如果我们在求值 <code class="docutils literal notranslate"><span class="pre">2000%400</span> <span class="pre">==</span> <span class="pre">0</span></code> 为 <code class="docutils literal notranslate"><span class="pre">true</span></code> 时使用短路逻辑，
+是不是就可以节省一些时间了？ —</p></li>
+</ol>
+</div></blockquote>
+<blockquote>
+<div><p>{速查 3-4 答案}</p>
+<ol class="arabic">
+<li><p>是的， 2000 年的确是闰年：</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="mi">2000</span><span class="o">%</span><span class="mi">400</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="p">(</span><span class="mi">2000</span><span class="o">%</span><span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="mi">2000</span><span class="o">%</span><span class="mi">100</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="mi">0</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="p">(</span><span class="mi">0</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="mi">0</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="kc">true</span> <span class="o">||</span> <span class="p">(</span><span class="kc">true</span> <span class="o">&amp;&amp;</span> <span class="kc">false</span><span class="p">)</span>
+<span class="kc">true</span> <span class="o">||</span> <span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+<span class="kc">true</span>
+</pre></div>
+</div>
+</li>
+<li><p>是的， 计算并写下等式的后半部分需要花费额外的时间。
+虽然计算机执行相同计算的速度要快得多，
+但短路逻辑仍然能够起到节约时间的作用。</p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="switch">
+<h2>3.5 使用 <code class="docutils literal notranslate"><span class="pre">switch</span></code> 实现分支判断<a class="headerlink" href="#switch" title="永久链接至标题">¶</a></h2>
+<p>正如代码清单 3-6 所示，Go 提供了 <code class="docutils literal notranslate"><span class="pre">switch</span></code>
+语句，它可以将一个值和多个值进行比较。</p>
+<hr class="docutils" />
+<p>代码清单 3-6 <code class="docutils literal notranslate"><span class="pre">switch</span></code> 语句： <code class="docutils literal notranslate"><span class="pre">concise-switch.go</span></code></p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;There is a cavern entrance here and a path to the east.&quot;</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">command</span> <span class="p">=</span> <span class="s">&quot;go inside&quot;</span>
+
+<span class="k">switch</span> <span class="nx">command</span> <span class="p">{</span>    <span class="c1">// 将命令和给定的多个分支进行比较</span>
+<span class="k">case</span> <span class="s">&quot;go east&quot;</span><span class="p">:</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;You head further up the mountain.&quot;</span><span class="p">)</span>
+<span class="k">case</span> <span class="s">&quot;enter cave&quot;</span><span class="p">,</span> <span class="s">&quot;go inside&quot;</span><span class="p">:</span>     <span class="c1">// 使用逗号分隔可选值</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;You find yourself in a dimly lit cavern.&quot;</span><span class="p">)</span>
+<span class="k">case</span> <span class="s">&quot;read sign&quot;</span><span class="p">:</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;The sign reads &#39;No Minors&#39;.&quot;</span><span class="p">)</span>
+<span class="k">default</span><span class="p">:</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Didn&#39;t quite get that.&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>执行这个程序将产生以下输出：</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="nx">There</span> <span class="nx">is</span> <span class="nx">a</span> <span class="nx">cavern</span> <span class="nx">entrance</span> <span class="nx">here</span> <span class="nx">and</span> <span class="nx">a</span> <span class="nx">path</span> <span class="nx">to</span> <span class="nx">the</span> <span class="nx">east</span><span class="p">.</span>
+<span class="nx">You</span> <span class="nx">find</span> <span class="nx">yourself</span> <span class="nx">in</span> <span class="nx">a</span> <span class="nx">dimly</span> <span class="nx">lit</span> <span class="nx">cavern</span><span class="p">.</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>{注意}</p>
+<p>除了文字以外， <code class="docutils literal notranslate"><span class="pre">switch</span></code> 语句还可以接受数字作为条件。</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">switch</span></code> 的另一种用法是像 <code class="docutils literal notranslate"><span class="pre">if...else</span></code>
+那样，在每个分支中单独设置比较条件。 正如代码清单 3-7 所示，<code class="docutils literal notranslate"><span class="pre">switch</span></code>
+还拥有独特的 <code class="docutils literal notranslate"><span class="pre">fallthrough</span></code> 关键字，它可以用于执行下一分支的代码。</p>
+<hr class="docutils" />
+<p>代码清单 3-7 <code class="docutils literal notranslate"><span class="pre">switch</span></code> 语句： <code class="docutils literal notranslate"><span class="pre">switch.go</span></code></p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">room</span> <span class="p">=</span> <span class="s">&quot;lake&quot;</span>
+
+<span class="k">switch</span> <span class="p">{</span>    <span class="c1">// 比较表达式将被放置到单独的分支里面。</span>
+<span class="k">case</span> <span class="nx">room</span> <span class="o">==</span> <span class="s">&quot;cave&quot;</span><span class="p">:</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;You find yourself in a dimly lit cavern.&quot;</span><span class="p">)</span>
+<span class="k">case</span> <span class="nx">room</span> <span class="o">==</span> <span class="s">&quot;lake&quot;</span><span class="p">:</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;The ice seems solid enough.&quot;</span><span class="p">)</span>
+    <span class="k">fallthrough</span>    <span class="c1">// 下降（fall through）至下一分支。</span>
+<span class="k">case</span> <span class="nx">room</span> <span class="o">==</span> <span class="s">&quot;underwater&quot;</span><span class="p">:</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;The water is freezing cold.&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>执行这段代码将产生以下输出：</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="nx">The</span> <span class="nx">ice</span> <span class="nx">seems</span> <span class="nx">solid</span> <span class="nx">enough</span><span class="p">.</span>
+<span class="nx">The</span> <span class="nx">water</span> <span class="nx">is</span> <span class="nx">freezing</span> <span class="nx">cold</span><span class="p">.</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>{注意}</p>
+<p>在 C、Java、JavaScript 等语言中， 下降是 <code class="docutils literal notranslate"><span class="pre">switch</span></code>
+语句各个分支的默认行为。 Go 对此采取了更为谨慎的做法，
+用户需要显式地使用 <code class="docutils literal notranslate"><span class="pre">fallthrough</span></code> 关键字才会引发下降。</p>
+</div></blockquote>
+<blockquote>
+<div><p>{速查 3-5}</p>
+<p>请修改代码清单 3-7 ， 通过将 <code class="docutils literal notranslate"><span class="pre">room</span></code> 设置为每个分支的比较对象， 让
+<code class="docutils literal notranslate"><span class="pre">swtich</span></code> 语句能够以更为紧凑的形式出现。</p>
+</div></blockquote>
+<blockquote>
+<div><p>{速查 3-5 答案}</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="k">switch</span> <span class="nx">room</span> <span class="p">{</span>
+<span class="k">case</span> <span class="s">&quot;cave&quot;</span><span class="p">:</span>
+      <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;You find yourself in a dimly lit cavern.&quot;</span><span class="p">)</span>
+<span class="k">case</span> <span class="s">&quot;lake&quot;</span><span class="p">:</span>
+      <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;The ice seems solid enough.&quot;</span><span class="p">)</span>
+      <span class="k">fallthrough</span>
+<span class="k">case</span> <span class="s">&quot;underwater&quot;</span><span class="p">:</span>
+      <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;The water is freezing cold.&quot;</span><span class="p">)</span>
+ <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id5">
+<h2>3.6 使用循环实现重复执行<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>当你需要重复执行同一段代码的时候，比起一遍又一遍键入相同的代码，更好的办法是使用
+<code class="docutils literal notranslate"><span class="pre">for</span></code> 关键字。 比如代码清单 3-8 就展示了如何重复执行同一段代码直到
+<code class="docutils literal notranslate"><span class="pre">count</span></code> 变量的值等于 <code class="docutils literal notranslate"><span class="pre">0</span></code> 。</p>
+<img alt="../_images/rocket.jpg" src="../_images/rocket.jpg" />
+<hr class="docutils" />
+<p>代码清单 3-8 倒数循环： <code class="docutils literal notranslate"><span class="pre">countdown.go</span></code></p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+    <span class="s">&quot;fmt&quot;</span>
+    <span class="s">&quot;time&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">count</span> <span class="p">=</span> <span class="mi">10</span>              <span class="c1">// 声明并初始化</span>
+
+    <span class="k">for</span> <span class="nx">count</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>             <span class="c1">// 为循环设置条件</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">count</span><span class="p">)</span>
+        <span class="nx">time</span><span class="p">.</span><span class="nx">Sleep</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
+        <span class="nx">count</span><span class="o">--</span>                 <span class="c1">// 每次循环之后将计数器的值减一，以免产生无限循环</span>
+    <span class="p">}</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Liftoff!&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>在每次迭代开始之前，表达式 <code class="docutils literal notranslate"><span class="pre">count</span> <span class="pre">&gt;</span> <span class="pre">0</span></code> 都会被求值并产生一个布尔值：
+当该值为 <code class="docutils literal notranslate"><span class="pre">false</span></code> 也即是 <code class="docutils literal notranslate"><span class="pre">count</span></code> 变量等于 <code class="docutils literal notranslate"><span class="pre">0</span></code>
+的时候，循环就会停止；
+反之，如果布尔值为真，那么程序将继续执行循环的体（body），也即是被 <code class="docutils literal notranslate"><span class="pre">{</span></code>
+和 <code class="docutils literal notranslate"><span class="pre">}</span></code> 包裹的那部分代码。</p>
+<p>此外，我们还可以通过不为 <code class="docutils literal notranslate"><span class="pre">for</span></code>
+语句设置任何条件来产生<em>无限</em>循环，然后在有需要的时候通过在循环体内使用
+<code class="docutils literal notranslate"><span class="pre">break</span></code> 语句来跳出循环。 比如接下来的代码清单 3-9 就会持续地进行 360°
+旋转，直到随机触发停止条件为止。</p>
+<hr class="docutils" />
+<p>代码清单 3-9 超越无限： <code class="docutils literal notranslate"><span class="pre">infinity.go</span></code></p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">degrees</span> <span class="p">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">degrees</span><span class="p">)</span>
+
+    <span class="nx">degrees</span><span class="o">++</span>
+    <span class="k">if</span> <span class="nx">degrees</span> <span class="o">&gt;=</span> <span class="mi">360</span> <span class="p">{</span>
+        <span class="nx">degrees</span> <span class="p">=</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="nx">rand</span><span class="p">.</span><span class="nx">Intn</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="k">break</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<blockquote>
+<div><p>{注意}</p>
+<p>之后的第 4 课和第 9 课将介绍 <code class="docutils literal notranslate"><span class="pre">for</span></code> 循环的更多不同形式。</p>
+</div></blockquote>
+<blockquote>
+<div><p>{速查 3-6}</p>
+<p>火箭的发射过程并非总是一帆风顺。 请实现一个火箭发射倒数程序，
+它在倒数过程中的每一秒钟都伴随着百分之一的几率会发射失败并停止倒数。</p>
+</div></blockquote>
+<blockquote>
+<div><p>{速查 3-6 答案}</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">count</span> <span class="p">=</span> <span class="mi">10</span>
+<span class="k">for</span> <span class="nx">count</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+      <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">count</span><span class="p">)</span>
+      <span class="nx">time</span><span class="p">.</span><span class="nx">Sleep</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
+      <span class="k">if</span> <span class="nx">rand</span><span class="p">.</span><span class="nx">Intn</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+              <span class="k">break</span>
+    <span class="p">}</span>
+      <span class="nx">count</span><span class="o">--</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="nx">count</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+      <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Liftoff!&quot;</span><span class="p">)</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Launch failed.&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id6">
+<h2>3.7 课后小结<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>布尔值是唯一可以用于条件判断的值。</p></li>
+<li><p>Go 通过 <code class="docutils literal notranslate"><span class="pre">if</span></code> 、 <code class="docutils literal notranslate"><span class="pre">switch</span></code> 和 <code class="docutils literal notranslate"><span class="pre">for</span></code> 来实现分支判断和重复执行。</p></li>
+<li><p>直到目前为止，我们已经使用了 Go 25 个关键字中的 12 个，它们分别是：
+<code class="docutils literal notranslate"><span class="pre">package</span></code>、<code class="docutils literal notranslate"><span class="pre">import</span></code>、<code class="docutils literal notranslate"><span class="pre">func</span></code>、<code class="docutils literal notranslate"><span class="pre">var</span></code>、<code class="docutils literal notranslate"><span class="pre">if</span></code>、<code class="docutils literal notranslate"><span class="pre">else</span></code>、<code class="docutils literal notranslate"><span class="pre">switch</span></code>、<code class="docutils literal notranslate"><span class="pre">case</span></code>、<code class="docutils literal notranslate"><span class="pre">default</span></code>、<code class="docutils literal notranslate"><span class="pre">fallthrough</span></code>、<code class="docutils literal notranslate"><span class="pre">for</span></code>
+还有 <code class="docutils literal notranslate"><span class="pre">break</span></code> 。</p></li>
+</ul>
+<p>为了检验你是否已经掌握了上述知识，请尝试完成以下实验。</p>
+<div class="section" id="guess-go">
+<h3>实验： <code class="docutils literal notranslate"><span class="pre">guess.go</span></code><a class="headerlink" href="#guess-go" title="永久链接至标题">¶</a></h3>
+<p>请编写一个“猜数字”程序，让它重复地从 1 至 100
+之间随机选择一个数字，直到这个数字跟你在程序开头声明的数字相同为止。
+请打印出程序随机选中的每个数字，并说明该数字是大于还是小于你指定的数字。</p>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, 黄健宏.<br/>
+      由 <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1 创建。<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

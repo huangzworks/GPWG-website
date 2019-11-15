@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>第 5 章：单元实验——前往火星的航行票 &#8212; GPWGCN.com 1.0 文档</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="prev" title="第 4 章：变量作用域" href="lession4.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          GPWGCN.com</a>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="preface.html">译者序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foreword.html">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ack.html">致谢</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_this_book.html">关于本书</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_the_authors.html">关于作者</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lession1.html">第 1 章：各就各位，预备，Go！</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="lession2.html">第 2 章：被美化的计算器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lession3.html">第 3 章：循环和分支</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lession4.html">第 4 章：变量作用域</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">第 5 章：单元实验——前往火星的航行票</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">导航 <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">第 5 章：单元实验——前往火星的航行票</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="lession4.html" title="Previous Chapter: 第 4 章：变量作用域"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 第 4 章：变量作用域</span>
+    </a>
+  </li>
+              
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <div class="section" id="id1">
+<h1>第 5 章：单元实验——前往火星的航行票<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>欢迎来到本书的第一个单元实验，现在是时候使用我们在本单元学习到的知识来编写程序了！
+我们的目标是在 Go
+游乐场编写一个太空航行票务生成器，它需要用到变量、常量、<code class="docutils literal notranslate"><span class="pre">switch</span></code> 、
+<code class="docutils literal notranslate"><span class="pre">if</span></code> 和 <code class="docutils literal notranslate"><span class="pre">for</span></code> ，并使用 <code class="docutils literal notranslate"><span class="pre">fmt</span></code> 包和 <code class="docutils literal notranslate"><span class="pre">math/rand</span></code>
+包来显示文本、对齐文本以及生成随机数。</p>
+<p>在计划以火星为目的地的旅行时，能够从一个地方获知多家太空航行公司的票价将是一件非常方便的事情。
+虽然现在已经有不少聚合各大航空公司飞机票价格的网站，但目前还没有网站推出过相应的太空航行票务服务。
+不过这对于我们来说并非难事，毕竟我们可以通过 Go 来让计算机解决这一问题。</p>
+<p>为此，我们需要构建一个原型程序，它可以随机生成 10
+张太空航行票，并将它们打印到格式工整、标题美观的表格里面，就像这样：</p>
+<table class="docutils align-center">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>太空航行公司</p></th>
+<th class="head"><p>飞行天数</p></th>
+<th class="head"><p>飞行类型</p></th>
+<th class="head"><p>价格（百万美元）</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Virgin Galactic</p></td>
+<td><p>23</p></td>
+<td><p>往返</p></td>
+<td><p>96</p></td>
+</tr>
+<tr class="row-odd"><td><p>Virgin Galactic</p></td>
+<td><p>39</p></td>
+<td><p>单程</p></td>
+<td><p>37</p></td>
+</tr>
+<tr class="row-even"><td><p>SpaceX</p></td>
+<td><p>31</p></td>
+<td><p>单程</p></td>
+<td><p>41</p></td>
+</tr>
+<tr class="row-odd"><td><p>Space Adventures</p></td>
+<td><p>22</p></td>
+<td><p>往返</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-even"><td><p>Space Adventures</p></td>
+<td><p>22</p></td>
+<td><p>单程</p></td>
+<td><p>50</p></td>
+</tr>
+<tr class="row-odd"><td><p>Virgin Galactic</p></td>
+<td><p>30</p></td>
+<td><p>往返</p></td>
+<td><p>84</p></td>
+</tr>
+<tr class="row-even"><td><p>Virgin Galactic</p></td>
+<td><p>24</p></td>
+<td><p>往返</p></td>
+<td><p>94</p></td>
+</tr>
+<tr class="row-odd"><td><p>Space Adventures</p></td>
+<td><p>27</p></td>
+<td><p>单程</p></td>
+<td><p>44</p></td>
+</tr>
+<tr class="row-even"><td><p>Space Adventures</p></td>
+<td><p>28</p></td>
+<td><p>往返</p></td>
+<td><p>86</p></td>
+</tr>
+<tr class="row-odd"><td><p>SpaceX</p></td>
+<td><p>41</p></td>
+<td><p>往返</p></td>
+<td><p>72</p></td>
+</tr>
+</tbody>
+</table>
+<p>程序打印的表格应该包含以下四列：</p>
+<ul class="simple">
+<li><p>提供服务的太空航行公司</p></li>
+<li><p>以天为单位，到达火星所需的单程飞行时间</p></li>
+<li><p>票价是否包含返程票</p></li>
+<li><p>以百万美元为单位的票价</p></li>
+</ul>
+<p>对于每张太空航行票，从 Space Adventures、SpaceX、Virgin Galactic
+这三间太空航行公司中随机选择一间作为服务商。</p>
+<p>使用 2020 年 10 月 13
+日作为所有太空航行票的出发日期，火星和地球在那一天的距离为 62,100,000
+公里。</p>
+<p>在每秒 16 公里至每秒 30
+公里之间随机选择一种作为宇宙飞船的飞行速度，该速度决定了飞行的时长以及价格。
+宇宙飞船每次飞行的价格从 3600 万美元到 5000
+万美元不等，速度越快的航线价格也越贵，至于双程票则需要收取双倍费用。</p>
+<p>请在完成实验之后，将你的解答发布到本书在
+<a class="reference external" href="https://forums.manning.com/forums/get-programming-with-go">forums.manning.com/forums/get-programming-with-go</a>
+的论坛里面。
+如果你在解题的过程中被难住了，那么可以随时到论坛里面请求帮助，又或者去看看本书附录提供的参考答案。</p>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, 黄健宏.<br/>
+      由 <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1 创建。<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
