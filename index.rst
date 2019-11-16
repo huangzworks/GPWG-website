@@ -31,6 +31,8 @@
 目录&试读
 --------------
 
+你可以通过点击以下链接或者\ `下载 PDF 文件 <https://github.com/huangz1990/GPWG-website/raw/master/gpwgcn_preview.pdf>`_\ 来试读本书。
+
 .. toctree::
    :maxdepth: 2
 
