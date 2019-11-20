@@ -3,13 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-《Get Programming with Go》中文版
+《Go语言趣学指南》
 =========================================
 
-.. image:: image/cover.jpeg
+.. image:: image/cover.jpg
    :align: left
 
-欢迎来到《Get Programming with Go》中文版的读者服务网站！
+欢迎来到《Get Programming with Go》中文版《Go语言趣学指南》的读者服务网站！
 
 本书将以循序渐进的方式讲解高效使用 Go 所必需的概念，并提供大量练习来磨砺你的技能。 
 这是一本初学者指南，旨在从头到尾地进行阅读，并且每个课程都建立在前面课程的基础之上。 
@@ -21,7 +21,7 @@
 发售信息
 ---------------
 
-《Get Programming with Go》中文版由人民邮电出版社引进，黄健宏负责翻译。
+《Go语言趣学指南》中文版由人民邮电出版社引进，黄健宏负责翻译。
 
 本书译稿目前已经完成，正交由出版社处理当中，完整电子版预计将于 2019 年 12 月在\ `异步社区 <http://epubit.com.cn>`_\ 首发，敬请期待！
 
@@ -319,10 +319,10 @@ ROGER PEPPÉ （罗杰·佩珀）是一位 Go 贡献者，他维护着一系列
 相关资源
 --------------
 
-`《Get Programming with Go》在 Manning 出版社的主页 <https://www.manning.com/books/get-programming-with-go>`_
+`《Go语言趣学指南》原书在 Manning 出版社的主页 <https://www.manning.com/books/get-programming-with-go>`_
 
-`《Get Programming with Go》的配套源码 <https://github.com/nathany/get-programming-with-go>`_
+`《Go语言趣学指南》的配套源码 <https://github.com/nathany/get-programming-with-go>`_
 
-`《Get Programming with Go》原文试读 <https://livebook.manning.com/book/get-programming-with-go/>`_
+`《Go语言趣学指南》原书试读 <https://livebook.manning.com/book/get-programming-with-go/>`_
 
 
