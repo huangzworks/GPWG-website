@@ -23,12 +23,11 @@
 
 本书在以下网店或应用有售：
 
-- 异步社区（纸书&电子书）
-- 人民邮电出版社官方旗舰店（京东、淘宝、当当）
-- 京东（自营、非自营）
-- 当当（自营、非自营）
-- 淘宝
-
+- `淘宝 <https://s.taobao.com/search?initiative_id=tbindexz_20170306&ie=utf8&spm=a21bo.2017.201856-taobao-item.2&sourceId=tb.index&search_type=item&ssid=s5-e&commend=all&imgfile=&q=Go%E8%AF%AD%E8%A8%80%E8%B6%A3%E5%AD%A6%E6%8C%87%E5%8D%97&suggest=history_1&_input_charset=utf-8&wq=&suggest_query=&source=suggest>`_\ 
+- 京东（\ `自营 <https://item.jd.com/12826232.html?dist=jd>`_\ 、\ `非自营 <https://search.jd.com/Search?keyword=Go%E8%AF%AD%E8%A8%80%E8%B6%A3%E5%AD%A6%E6%8C%87%E5%8D%97&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&suggest=1.his.0.0&click=2>`_\ ）
+- 当当（\ `自营 <http://product.dangdang.com/28525763.html>`_\ 、\ `非自营 <http://search.dangdang.com/?key=Go%D3%EF%D1%D4%C8%A4%D1%A7%D6%B8%C4%CF&act=input>`_\ ）
+- `异步社区 <https://www.epubit.com/bookDetails?id=UBb60129159591>`_\ （纸书&电子书）
+- 人民邮电出版社官方旗舰店（\ `京东 <https://item.jd.com/66945871504.html>`_\ 、\ `天猫 <https://detail.tmall.com/item.htm?spm=a230r.1.14.68.35fd14b2UTlWmz&id=614129741187&ns=1&abbucket=19>`_\ 、\ `当当 <http://product.dangdang.com/1580063775.html>`_\ ）
 
 目录&试读
 --------------
