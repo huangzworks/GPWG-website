@@ -308,7 +308,7 @@ ROGER PEPPÉ （罗杰·佩珀）是一位 Go 贡献者，他维护着一系列
 译者简介
 ------------------
 
-.. image:: image/huangz.jpeg
+.. image:: image/HUANGZ.jpeg
    :scale: 30%
 
 黄健宏（huangz）是一位 IT 技术图书作译者。
