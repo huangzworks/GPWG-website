@@ -23,8 +23,8 @@
 
 本书在以下网店或应用有售：
 
-- `淘宝 <https://s.taobao.com/search?initiative_id=tbindexz_20170306&ie=utf8&spm=a21bo.2017.201856-taobao-item.2&sourceId=tb.index&search_type=item&ssid=s5-e&commend=all&imgfile=&q=Go%E8%AF%AD%E8%A8%80%E8%B6%A3%E5%AD%A6%E6%8C%87%E5%8D%97&suggest=history_1&_input_charset=utf-8&wq=&suggest_query=&source=suggest>`_\ 
 - 京东（\ `自营 <https://item.jd.com/12826232.html?dist=jd>`_\ 、\ `非自营 <https://search.jd.com/Search?keyword=Go%E8%AF%AD%E8%A8%80%E8%B6%A3%E5%AD%A6%E6%8C%87%E5%8D%97&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&suggest=1.his.0.0&click=2>`_\ ）
+- `淘宝 <https://s.taobao.com/search?initiative_id=tbindexz_20170306&ie=utf8&spm=a21bo.2017.201856-taobao-item.2&sourceId=tb.index&search_type=item&ssid=s5-e&commend=all&imgfile=&q=Go%E8%AF%AD%E8%A8%80%E8%B6%A3%E5%AD%A6%E6%8C%87%E5%8D%97&suggest=history_1&_input_charset=utf-8&wq=&suggest_query=&source=suggest>`_\ 
 - 当当（\ `自营 <http://product.dangdang.com/28525763.html>`_\ 、\ `非自营 <http://search.dangdang.com/?key=Go%D3%EF%D1%D4%C8%A4%D1%A7%D6%B8%C4%CF&act=input>`_\ ）
 - `异步社区 <https://www.epubit.com/bookDetails?id=UBb60129159591>`_\ （纸书&电子书）
 - 人民邮电出版社官方旗舰店（\ `京东 <https://item.jd.com/66945871504.html>`_\ 、\ `天猫 <https://detail.tmall.com/item.htm?spm=a230r.1.14.68.35fd14b2UTlWmz&id=614129741187&ns=1&abbucket=19>`_\ 、\ `当当 <http://product.dangdang.com/1580063775.html>`_\ ）
@@ -32,7 +32,7 @@
 目录&试读
 --------------
 
-你可以通过点击以下链接或者\ `下载 PDF 文件 <https://github.com/huangz1990/GPWG-website/raw/master/gpwgcn_preview.pdf>`_\ 来试读本书。
+你可以通过点击以下链接或者\ `下载 PDF 文件 <https://github.com/huangzworks/GPWG-website/raw/master/gpwgcn_preview.pdf>`_\ 来试读本书。
 
 .. toctree::
    :maxdepth: 2
@@ -313,7 +313,7 @@ ROGER PEPPÉ （罗杰·佩珀）是一位 Go 贡献者，他维护着一系列
 
 黄健宏（huangz）是一位 IT 技术图书作译者。
 他著有《Redis使用手册》和《Redis设计与实现》，译有《Go Web 编程》和《Redis实战》。
-关于他的更多信息请访问 `huangz.me <http://huangz.me>`_ 。
+关于他的更多信息请访问 `huangz.works <http://huangz.works>`_ 。
 
 
 
