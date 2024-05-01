@@ -47,7 +47,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'GPWGCN.com'
+project = '《Go语言趣学指南》读者服务网站'
 copyright = '2019, 黄健宏'
 author = '黄健宏'
 
